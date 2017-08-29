@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'posts.apps.postsConfig',
 ]
 
 MIDDLEWARE = [
@@ -71,12 +72,16 @@ WSGI_APPLICATION = 'til.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# I will be using a postgresql database with the following settings:
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'til',
+        'USER': 'til_user',
+        'PASSWORD':'til_pass',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
